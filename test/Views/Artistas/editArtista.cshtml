@@ -1,0 +1,17 @@
+﻿@model test.Models.artistas
+@{
+    ViewBag.Title = "Editar artista";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/artista/artistas.css" />
+<h2 class="text-center">Editar artista</h2>
+<div id="formulario">
+    @using (Html.BeginForm("Edit", "Artistas", FormMethod.Post))
+    {
+        @Html.TextBoxFor(u => u.idArtista, new { @class = "uk-input hidden", placeholder = "Usuario" })
+        @Html.TextBoxFor(u => u.nameArtista, new { @class = "uk-input", placeholder = "Usuario" })<br /><br />
+        @Html.ValidationMessageFor(u => u.nameArtista)
+        <button type="submit" class="button">Editar</button>
+        @Html.ActionLink("Volver", "Index", "Home", null, new { @class = "button" })
+
+    }
+</div>

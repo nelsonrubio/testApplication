@@ -1,0 +1,42 @@
+﻿@model test.album
+@{
+    ViewBag.Title = "Editar Album";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/artista/artistas.css" />
+<h2 class="text-center">Editar artista</h2>
+
+<div id="formulario">
+    @using (Html.BeginForm("editarAlbum", "Album", FormMethod.Post))
+    {
+        <p class="uk-margin">
+            <div class="uk-inline" style="display: none">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                @Html.TextBoxFor(u => u.idArtista, new { @class = "uk-input", placeholder = "Usuario" })
+            </div>
+            <div class="uk-inline" style="display: none">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                @Html.TextBoxFor(u => u.idAlbum, new { @class = "uk-input", placeholder = "Usuario" })
+            </div>
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                @Html.TextBoxFor(u => u.nombre, new { @class = "uk-input", placeholder = "Usuario" })
+            </div>
+            @*<input class="inputMaterial" type="text" required>*@
+            @Html.ValidationMessageFor(u => u.nombre)
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                @Html.TextBoxFor(u => u.genero, new { @class = "uk-input", placeholder = "Usuario" })
+            </div>
+            @*<input class="inputMaterial" type="text" required>*@
+            @Html.ValidationMessageFor(u => u.genero)
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                @Html.TextBoxFor(u => u.fecha, new { @class = "uk-input", placeholder = "Usuario" })
+            </div>
+            @*<input class="inputMaterial" type="text" required>*@
+            @Html.ValidationMessageFor(u => u.fecha)
+        </p>
+ 
+            <button type="submit" class="button"  >Editar</button>
+    }
+</div>

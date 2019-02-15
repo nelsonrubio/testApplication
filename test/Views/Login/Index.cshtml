@@ -1,0 +1,25 @@
+﻿@model test.Models.users
+<link rel="stylesheet" type="text/css" href="~/Content/login/login.css" />
+<div class="row">
+    <div class="col-md-12">
+        <div class="contenedor fadeInDown">
+            <div id="formulario">
+                <div class="fadeIn first">
+                    <img src="~/Content/images/user.png" class="userIcon" />
+                </div>
+                @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+                {
+                    @Html.TextBoxFor(u => u.Usuario, new { @class = "", placeholder = "Usuario" })
+                    <p>@Html.ValidationMessageFor(u => u.Usuario) </p>
+                   <button class="button">Entrar</button>
+
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+</div>

@@ -1,0 +1,28 @@
+﻿@model test.Models.artistas
+@{
+    ViewBag.Title = "createArtista";
+}
+
+<h2>Crear artista</h2>
+<div class="row">
+    <div class="uk-card uk-card-muted uk-card-body">
+
+
+        @using (Html.BeginForm("createArtista", "Home", FormMethod.Post))
+        {
+            <p class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    @Html.TextBoxFor(u => u.nameArtista, new { @class = "uk-input", placeholder = "Nombre del artista" })
+                </div>
+                @*<input class="inputMaterial" type="text" required>*@
+                @Html.ValidationMessageFor(u => u.nameArtista)
+            </p>
+
+            <div class="uk-grid-margin-medium">
+                <button type="submit" class="uk-button uk-button-primary" id="buttonlogintoregister">ENTRAR</button>
+            </div>
+        }
+
+    </div>
+</div>

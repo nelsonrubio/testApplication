@@ -1,0 +1,39 @@
+﻿@model IEnumerable<test.artista>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.User = Session["user"];
+}
+<link rel="stylesheet" type="text/css" href="~/Content/home/home.css" />
+
+<h2 class="text-center">Bienvenido @ViewBag.User</h2>
+    <div id="formulario">
+        @Html.ActionLink("Crear artista", "createArtista", "Artistas", null, new { @class = "button " }) <br /><br />
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    Nombre de artista
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nameArtista)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "editArtista", "Artistas", new { id = item.idArtista }, new { @class = "button" })
+                        @Html.ActionLink("Album", "Index", "Album", new { id = item.idArtista }, new { @class = "button" })
+                        @Html.ActionLink("Eliminar", "deleteArtista", "Artistas", new { id = item.idArtista }, new { @class = "button" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+
+
+

@@ -1,0 +1,16 @@
+﻿@model test.Models.artistas
+@{
+    ViewBag.Title = "createArtista";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/artista/artistas.css" />
+<h2 class="text-center">Crear artista</h2>
+<div id="formulario">
+    @using (Html.BeginForm("createArtista", "Artistas", FormMethod.Post))
+    {
+        @Html.TextBoxFor(u => u.nameArtista, new { @class = "", placeholder = "Nombre del artista" })<br /><br />
+        <p> @Html.ValidationMessageFor(u => u.nameArtista)</p>
+        <button class="button">Crear</button>
+        @Html.ActionLink("Volver", "Index", "Home", null, new { @class = "button" })
+
+    }
+</div>
