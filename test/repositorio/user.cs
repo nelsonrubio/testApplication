@@ -40,7 +40,7 @@ namespace test.repositorio
             artistas result = new artistas
             {
                 idArtista = consulta.idArtista,
-                nameArtista = consulta.nameArtista
+                nameArtista = consulta.nameArtista.TrimEnd()
             };
 
             return result;
@@ -52,7 +52,7 @@ namespace test.repositorio
             artista info = new artista
             {
                 idArtista = data.idArtista,
-                nameArtista = data.nameArtista
+                nameArtista = data.nameArtista.TrimEnd()
             };
             entDev.artista.Attach(info);
             entDev.Entry(info).State = System.Data.Entity.EntityState.Modified;
@@ -108,8 +108,8 @@ namespace test.repositorio
             album result = new album
             {
                 idAlbum = consulta.idAlbum,
-                nombre = consulta.nombre,
-                genero = consulta.genero,
+                nombre = consulta.nombre.TrimEnd(),
+                genero = consulta.genero.TrimEnd(),
                 fecha = consulta.fecha,
                 idArtista = consulta.idArtista
             };
@@ -123,8 +123,8 @@ namespace test.repositorio
             album info = new album
             {
                 idAlbum = data.idAlbum,
-                nombre = data.nombre,
-                genero = data.genero,
+                nombre = data.nombre.TrimEnd(),
+                genero = data.genero.TrimEnd(),
                 fecha = data.fecha,
                 idArtista = data.idArtista
             };
