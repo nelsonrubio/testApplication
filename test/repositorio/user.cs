@@ -62,12 +62,22 @@ namespace test.repositorio
 
         public bool deleteArtista(int id)
         {
-            var resultArtista = entDev.artista.Where(u => u.idArtista == id).First();
-
-            entDev.artista.Attach(resultArtista);
-            entDev.Entry(resultArtista).State = System.Data.Entity.EntityState.Deleted;
-            entDev.SaveChanges();
-            return true;
+            try
+            {
+                var resultAlbum = entDev.album.Where(u => u.idArtista == id).ToList();
+                entDev.album.RemoveRange(resultAlbum);
+                entDev.SaveChanges();
+                var resultArtista = entDev.artista.Where(u => u.idArtista == id).First();
+                entDev.artista.Attach(resultArtista);
+                entDev.Entry(resultArtista).State = System.Data.Entity.EntityState.Deleted;
+                entDev.SaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+           
         }
 
         public bool createArtista(artistas data)
