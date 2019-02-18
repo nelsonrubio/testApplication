@@ -175,6 +175,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\home\home.css" />
+    <Content Include="Content\images\user.png" />
+    <Content Include="Content\login\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -228,8 +231,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Default\" />
-    <Folder Include="Views\Hola\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
