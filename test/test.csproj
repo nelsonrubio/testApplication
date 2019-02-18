@@ -175,6 +175,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\album\album.css" />
+    <Content Include="Content\artista\artista.css" />
     <Content Include="Content\home\home.css" />
     <Content Include="Content\images\user.png" />
     <Content Include="Content\login\login.css" />
